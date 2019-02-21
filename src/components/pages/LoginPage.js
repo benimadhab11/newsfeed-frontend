@@ -1,21 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginForm from '../forms/LoginForm';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { login } from '../../actions/auth';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import LoginForm from "../forms/LoginForm";
+import { login } from "../../actions/auth";
 
-export class LoginPage extends React.Component {
-	submit = data => this.props.login(data).then(() => this.props.history.push("/"));
+class LoginPage extends React.Component {
+  submit = data =>
+    this.props.login(data).then(() => this.props.history.push("/dashboard"));
 
-	render() {
-		return (
-			<div>
-			  	<h1>LoginPage</h1>
-			  	<LoginForm submit={this.submit} />
-		  </div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <h1>Login page</h1>
+
+        <LoginForm submit={this.submit} />
+      </div>
+    );
+  }
 }
 
 LoginPage.propTypes = {
@@ -26,4 +28,3 @@ LoginPage.propTypes = {
 };
 
 export default connect(null, { login })(LoginPage);
-

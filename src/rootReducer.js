@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
 import user from "./reducers/user";
-import books from "./reducers/books";
+import items from "./reducers/items";
+import bestitems from "./reducers/bestitems";
 
 export default combineReducers({
   user,
-  books
+  items,
+  bestitems
 });

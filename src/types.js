@@ -1,4 +1,6 @@
 export const USER_LOGGED_IN = "USER_LOGGED_IN";
 export const USER_LOGGED_OUT = "USER_LOGGED_OUT";
-export const BOOKS_FETCHED = "BOOKS_FETCHED";
-export const BOOK_CREATED = "BOOK_CREATED";
+export const ITEMS_FETCHED = "ITEMS_FETCHED";
+export const ITEM_CREATED = "ITEM_CREATED";
+export const BEST_ITEMS_FETCHED = "BEST_ITEMS_FETCHED";
+

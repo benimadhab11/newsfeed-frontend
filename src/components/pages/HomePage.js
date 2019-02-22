@@ -6,10 +6,10 @@ import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
-    <h1>Welcome to the home page</h1>
+    
     {isAuthenticated ? (
       <div>
-        <Link to="/dashboard">Dashboard</Link>
+      <h1>Please refresh the page and click on Dashboard/Best Items</h1>
       </div>
       
     ) : (
@@ -27,7 +27,7 @@ HomePage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    isAuthenticated: !!state.user.token
+    isAuthenticated: !!state.user.email
   };
 }
 

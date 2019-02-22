@@ -5,8 +5,8 @@ import { Route } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
 import DashboardPage from "./components/pages/DashboardPage";
+import BestItemPage from "./components/pages/BestItemPage";
 import SignupPage from "./components/pages/SignupPage";
-import NewBookPage from "./components/pages/NewBookPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
 import TopNavigation from "./components/navigation/TopNavigation";
@@ -28,11 +28,11 @@ const App = ({ location, isAuthenticated }) => (
       exact
       component={DashboardPage}
     />
-    <UserRoute
+     <UserRoute
       location={location}
-      path="/books/new"
+      path="/bestitem"
       exact
-      component={NewBookPage}
+      component={BestItemPage}
     />
   </div>
 );

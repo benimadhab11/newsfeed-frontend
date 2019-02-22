@@ -5,19 +5,12 @@ export default {
     login: credentials =>
       axios.post("/api/auth", { credentials }).then(res => res.data.credentials),
     signup: credentials =>
-      axios.post("/api/users", { credentials }).then(res => res.data.credentials),
-    confirm: token =>
-      axios
-        .post("/api/auth/confirmation", { token })
-        .then(res => res.data.user),
-    resetPasswordRequest: email =>
-      axios.post("/api/auth/reset_password_request", { email }),
-    validateToken: token => axios.post("/api/auth/validate_token", { token }),
-    resetPassword: data => axios.post("/api/auth/reset_password", { data })
+      axios.post("/api/users", { credentials }).then(res => res.data.credentials)
   },
-  books: {
-    fetchAll: () => axios.get("/api/books").then(res => res.data.books),
-    create: book =>
-      axios.post("/api/books", { book }).then(res => res.data.book)
+  news: {
+    fetchAll: () => axios.get("/api/v1/getitems").then(res => res.data),
+    create: (userrating, guidObject) => axios.post("/api/v1/getitems/"+guidObject, userrating ).then(res => res.data),
+    fetchBestItems: () => axios.get("/api/v1/getitems/bestrated").then(res => res.data)
+
   }
 };
